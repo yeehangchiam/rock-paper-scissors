@@ -7,11 +7,11 @@ function computerPlay(computerSelection){
     let choiceNumber = Math.floor(Math.random()*3);
 
     if(choiceNumber == 0){
-        computerSelection = "Rock";
+        computerSelection = "rock";
     }else if(choiceNumber == 1){
-        computerSelection = "Paper";
+        computerSelection = "paper";
     }else{
-        computerSelection = "Scissors";
+        computerSelection = "scissors";
     }
 
     return(computerSelection);
@@ -21,37 +21,37 @@ function computerPlay(computerSelection){
 //use if else statement to implement
 function playRound(playerSelection,computerSelection)
 {
-   if(playerSelection.toUpperCase() === computerSelection.toUpperCase())
+   if(playerSelection === computerSelection)
    {
        console.log(playerSelection,computerSelection);
         return("It's a tie!");
    }
-   else if(playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS")
+   else if(playerSelection=== "rock" && computerSelection === "scissors")
    {
     console.log(playerSelection,computerSelection);
-        return("You Win! Rock beats Scissors");
+        return("You Win! rock beats scissors");
    }
-   else if(playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK")
+   else if(playerSelection === "paper" && computerSelection === "rock")
    {
     console.log(playerSelection,computerSelection);
-    return("You Win! Paper beats Rock");
+    return("You Win! paper beats rock");
    }
-   else if(playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER")
+   else if(playerSelection === "scissors" && computerSelection === "paper")
    {
     console.log(playerSelection,computerSelection);
-    return("You Win! Scissors beat Paper");
+    return("You Win! scissors beat paper");
    }
-   else if(playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER")
+   else if(playerSelection === "rock" && computerSelection === "paper")
    {
     console.log(playerSelection,computerSelection);
     return("You Lose! Computer's "+ computerSelection + " beat "+playerSelection);
     }
-    else if(playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS")
+    else if(playerSelection === "paper" && computerSelection === "scissors")
     {
         console.log(playerSelection,computerSelection);
         return("You Lose! Computer's "+ computerSelection + " beat "+playerSelection);
     }
-    else if(playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK")
+    else if(playerSelection === "scissors" && computerSelection === "rock")
     {
         console.log(playerSelection,computerSelection);
         return("You Lose! Computer's "+ computerSelection + " beat "+playerSelection);
@@ -59,23 +59,25 @@ function playRound(playerSelection,computerSelection)
 }
 
 function game(){
-    const playerSelection = window.prompt("Enter your choice (Rock, Paper, Scissors): ");
+      let computerSelection= computerPlay();
+    let playerSelection = window.prompt("Enter your choice (rock, paper, scissors): ");
     console.log(playRound(playerSelection,computerSelection)); 
 
-    const playerSelection = window.prompt("Enter your choice (Rock, Paper, Scissors): ");
+     playerSelection = window.prompt("Enter your choice (rock, paper, scissors): ");
     console.log(playRound(playerSelection,computerSelection)); 
 
-    const playerSelection = window.prompt("Enter your choice (Rock, Paper, Scissors): ");
+     playerSelection = window.prompt("Enter your choice (rock, paper, scissors): ");
     console.log(playRound(playerSelection,computerSelection)); 
 
-    const playerSelection = window.prompt("Enter your choice (Rock, Paper, Scissors): ");
+     playerSelection = window.prompt("Enter your choice (rock, paper, scissors): ");
     console.log(playRound(playerSelection,computerSelection)); 
 
-    const playerSelection = window.prompt("Enter your choice (Rock, Paper, Scissors): ");
+     playerSelection = window.prompt("Enter your choice (rock, paper, scissors): ");
     console.log(playRound(playerSelection,computerSelection)); 
     
 }
+console.log(game());
 
-//  const playerSelection = "Rock";
-//  const computerSelection = computerPlay();
-//  console.log(playRound(playerSelection.toUpperCase(),computerSelection.toUpperCase()));
+//  const playerSelection = "rock";
+//   const computerSelection = computerPlay();
+//  console.log(playRound(playerSelection,computerSelection));
