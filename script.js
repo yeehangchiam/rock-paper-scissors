@@ -4,7 +4,7 @@ function getComputerChoice(){
 
     //generate random number between 0 to 2
     const choice  = Math.floor(Math.random() * 3);
-    console.log(choice);
+    console.log("computer choice is: "+choice);
     //return result according to the computer choice
     if (choice == 0){
         return choices[choice];
@@ -17,7 +17,7 @@ function getComputerChoice(){
     }
 }
 
-let userChoice  = prompt("Please enter your choice (0,1,2): ");
+
 
 function getPlayerChoice(choice){
     const choices = ["rock","paper","scissors"];
@@ -59,8 +59,14 @@ function playRound(playerChoice,computerChoice){
     }
 }
 
-console.log(playRound(getPlayerChoice(userChoice),getComputerChoice()));
+
 
 function game(){
 
+    for (let i = 0; i < 5; i++){
+        let userChoice  = prompt("Please enter your choice (0,1,2): ");
+        playRound(getPlayerChoice(userChoice),getComputerChoice());
+    }
 }
+
+game();
